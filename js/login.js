@@ -35,7 +35,7 @@ async function login(){
         modalLoginFailbyPassword();
     }
 
-    if(user.userame === userName && user.password === password){
+    if(user.username === userName && user.password === password){
         OpenURL('inLogin.html');
     }
 
