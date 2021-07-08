@@ -29,20 +29,19 @@ async function login(){
 
     const user = listOfUsers.find((f) => f.username === userName);
 
-    console.log(user)
-    // if (!user){
-    //     return modalLoginFailbyUserName();
-    // } 
-    // if(user.password !== password){
-    //     return modalLoginFailbyPassword();
-    // }
+    if (!user){
+        return modalLoginFailbyUserName();
+    } 
+    if(user.password !== password){
+        return modalLoginFailbyPassword();
+    }
 
-    // if(user.username === userName && user.password === password){
-    //     return OpenURL('inLogin.html');
-    // }
+    if(user.username === userName && user.password === password){
+        return OpenURL('inLogin.html');
+    }
 
-    // const UserInf = JSON.stringify(user.id)
-    // localStorage.setItem('UserInf', UserInf)
+    const UserInf = JSON.stringify(user.id);
+    localStorage.setItem('UserInf', UserInf);
 }
 
 function modalLoginFailbyUserName(){
