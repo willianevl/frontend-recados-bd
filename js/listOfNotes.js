@@ -63,8 +63,6 @@ function CreateNewNote(){
         }, 3000);
     }
 
-    // document.getElementById('description').value;
-
     newNote.catch((error) => modalCreateNoteFail(error.response.data.msg))
     newNote.then(() => OpenURL('inLogin.html'))
 }

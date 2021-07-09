@@ -6,13 +6,13 @@ function showPassword(){
     const input = document.getElementById('password');
     const icon = document.getElementById('visibility');
     
-if(input.type === 'password'){
-    input.type = 'text';
-    icon.innerHTML = 'visibility';
-} else {
-    input.type = 'password';
-    icon.innerHTML = 'visibility_off';
-}
+    if(input.type === 'password'){
+        input.type = 'text';
+        icon.innerHTML = 'visibility';
+    } else {
+        input.type = 'password';
+        icon.innerHTML = 'visibility_off';
+    }
 }
 
 function OpenURL(href){
@@ -36,12 +36,12 @@ async function login(){
         return modalLoginFailbyPassword();
     }
 
+    const UserInf = JSON.stringify(user.id);
+    localStorage.setItem('UserInf', UserInf);
+
     if(user.username === userName && user.password === password){
         return OpenURL('inLogin.html');
     }
-
-    const UserInf = JSON.stringify(user.id);
-    localStorage.setItem('UserInf', UserInf);
 }
 
 function modalLoginFailbyUserName(){

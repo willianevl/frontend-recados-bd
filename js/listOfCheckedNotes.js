@@ -1,5 +1,3 @@
-
-
 window.addEventListener('load', () => {
     ShowCheckedNotes();
 });
@@ -30,14 +28,14 @@ async function ShowCheckedNotes() {
         i++
         indice++
     });
-}
-
-document.getElementById('homePage').addEventListener('click', () => {
-    OpenURL('inLogin.html');
-});
+} 
 
 function Logout(){
     localStorage.removeItem('UserInf');
     localStorage.removeItem('NoteID');
     OpenURL('index.html');
 }
+
+document.getElementById('homePage').addEventListener('click', () => {
+    OpenURL('inLogin.html');
+});
